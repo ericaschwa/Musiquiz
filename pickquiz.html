@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title> MUSIQUIZ </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" > </script>
+	<link rel="shortcut icon" href="favicon.ico" />	
+	<link rel="stylesheet" href="index_style.css">
+</head>
+<body>
+	<nav class="navbar navbar-inverse header">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand"> <img src="musiquiz.png" alt="logo" style="width:auto;height:30px;"> </a>
+			</div>
+		</div>
+	</nav>
+
+	<div id="status"> </div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1488554294779322";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<!-- this must be inserted directly after opening the body tag on each page you want to load it -->
+	<script>
+
+	  function statusChangeCallback(response) {
+	      testAPI();
+	  }
+
+	  // This function is called when someone finishes with the Login
+	  // Button.  See the onlogin handler attached to it in the sample
+	  // code below.
+	  function checkLoginState() {
+	    FB.getLoginStatus(function(response) {
+	      statusChangeCallback(response);
+	    });
+	  }
+
+	  window.fbAsyncInit = function() {
+		  FB.init({
+		    appId      : 'MUSIQUIZ',
+		    cookie     : true,  // enable cookies to allow the server to access 
+		                        // the session
+		    xfbml      : true,  // parse social plugins on this page
+		    version    : 'v2.2' // use version 2.2
+		  });
+
+		  // Now that we've initialized the JavaScript SDK, we call 
+		  // FB.getLoginStatus().  This function gets the state of the
+		  // person visiting this page and can return one of three states to
+		  // the callback you provide.  They can be:
+		  //
+		  // 1. Logged into your app ('connected')
+		  // 2. Logged into Facebook, but not your app ('not_authorized')
+		  // 3. Not logged into Facebook and can't tell if they are logged into
+		  //    your app or not.
+		  //
+		  // These three cases are handled in the callback function.
+
+		  FB.getLoginStatus(function(response) {
+		    statusChangeCallback(response);
+		  });
+
+	  };
+
+	  // Load the SDK asynchronously
+	  (function(d, s, id) {
+	    var js, fjs = d.getElementsByTagName(s)[0];
+	    if (d.getElementById(id)) return;
+	    js = d.createElement(s); js.id = id;
+	    js.src = "//connect.facebook.net/en_US/sdk.js";
+	    fjs.parentNode.insertBefore(js, fjs);
+	  }(document, 'script', 'facebook-jssdk'));
+
+	  // Here we run a very simple test of the Graph API after login is
+	  // successful.  See statusChangeCallback() for when this call is made.
+	  function testAPI() {
+	    FB.api('/me', function(response) {
+	    	var name = response.name;
+	     	document.getElementById('status').innerHTML =
+	        'Welcome, ' + name + '!';
+	        localStorage.setItem("name", name);
+	    });
+	  }
+
+	</script>
+
+	<!-- genres: pop: Today's Top Hits, rock: Rock Classics, jazz: Jazz Classics
+		 URL of our site: http://-->
+	<div class="row"> 
+		<div class="row cover"> 				
+			<div class="col-sm-3 genres"> <a onclick="localStorage.setItem('genre','POP');window.open('quizinfo.html')"><img src="pop.jpg" alt="pop" width="100%"> </a></div>
+		
+		
+			<div class="col-sm-3 genres"> <a onclick="localStorage.setItem('genre','JAZZ');window.open('quizinfo.html')"><img src="jazz.jpg" alt="jazz" width="100%"> </a></div>
+		
+	
+			<div class="col-sm-3 genres"> 	<a onclick="localStorage.setItem('genre','ROCK');window.open('quizinfo.html')"><img src="rock.jpg" alt="rock" width="100%"> </a></div>
+		
+		
+			<div class="col-sm-3 genres"> <a onclick="localStorage.setItem('genre','COUNTRY');window.open('quizinfo.html')"><img src="country.jpg" alt="country" width="100%"> </a></div>
+				
+		</div>
+		<div class="row challenge-friend">
+			<div id="challenge"> CHALLENGE A FRIEND! </div> 
+			<div class="fb-send" data-href="http://tuftsdev.github.io/comp20-f2015-team12/">
+	</div>
+
+</body>
+</html>
