@@ -8,7 +8,7 @@ margin: 0px;
 
 .panel {
 	background-color: black;
-	background-image: url("panel.jpg");
+	background-image: url("../img/panel.jpg");
 	background-repeat: no-repeat;
 	background-position: top;
 	background-size: 100%;
