@@ -1,0 +1,76 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+body {
+	background-color: black;
+}
+
+h1 {
+	color: gray;
+	font-size: 60px;
+	text-align: center;
+
+}
+
+.header {
+	margin-bottom: 0px;
+}
+
+.cover {
+	background-color: black;
+	background-image: url("cover.jpg");
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: 100%;
+	width: 100%;
+	height: 100%;
+	margin-top: 2%;
+}
+
+.genres {
+	margin-top: 13%;
+	padding: 0px;
+	max-height: 400px;
+}
+
+a:link {
+	color: black;
+}
+a:visited {
+	color: black;
+}
+
+.challenge-friend {
+	text-align: center;
+}
+
+#status {
+	text-align: right;
+	font-family: Futura;
+	color: white;
+	font-size: 12px;
+	margin-top: 5px;
+	margin-right: 5px;
+}
+
+#challenge {
+	margin-top: 20px;
+	font-family: Futura;
+	font-size: 30px;
+	color: white;
+}
+
+.fb-send {
+	background-color: #3B5998;
+	font-family: "Montserrat";
+	margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    color: white;
+    width: 30%;
+    border-radius: 15px;
+}
+
+.login_banner img {
+	width: 100%;
+	height: auto;
+}

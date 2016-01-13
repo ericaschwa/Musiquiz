@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+body {
+	text-align: center;
+	background-color: black;
+	margin: 0px;
+}
+
+.content{
+	text-align: left;
+	margin-left: 100px;
+	margin-top: 60px;
+}
+
+.h2 {
+	color: lightgray;
+	font-size: 40px;
+}
+
+canvas {
+	margin-top: 40px;
+}
+
+#scoreChart {
+	width: 400px;
+	height: 400px;
+}
+
+#lineChart {
+	width: 800px;
+	height: 400px;
+}
+
+.takeAnotherQuiz {
+	text-align: center;
+	height: 80px;
+	width: 300px;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	font-family: "Montserrat";
+	font-size: 25px;
+	background-color: #64E986;
+	border: none;
+	border-radius: 50px;
+}
+
+.takeAnotherQuiz:hover {
+	background-color: gray;
+	color: white;
+}
+
+.allScores {
+	text-align: center;
+}
+
+.genreScore {
+	margin: 20px;
+	width: 160px;
+	height: 160px;
+	background-color: white;
+	font-family: "Montserrat";
+	padding-top: 15px;
+	font-size: 20px;
+	color: gray;
+}
+
+p {
+	font-size: 30px;
+	font-family: "Montserrat";
+	font-weight: 900px;
+	color: black;
+}
+
+.fb-send {
+	width: 100px;
+}
