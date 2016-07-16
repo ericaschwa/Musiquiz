@@ -26,7 +26,8 @@ function drawScoreChart() {
 	        label: "Incorrect"
 	    }
 	]
-	// set more options, use: http://www.chartjs.org/docs/#doughnut-pie-chart-chart-options
+	// set more options,
+	// use: http://www.chartjs.org/docs/#doughnut-pie-chart-chart-options
 	var scoreOptions = {animateScale: true};
 	var pieChart = new Chart(scorectx).Doughnut(scoreData, scoreOptions);
 }
@@ -42,7 +43,8 @@ function getScores() {
 	var url = "https://musiquiz.herokuapp.com/returnScores";
 
 	request.open('GET', url, true);		
-	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	request.setRequestHeader("Content-type",
+							 "application/x-www-form-urlencoded");
 
 	request.onreadystatechange = function () {
 		if (request.readyState == 4 && request.status == 200) {
@@ -61,7 +63,8 @@ function getScores() {
 
 function drawLineChart() {
 
-	document.getElementById("lineChartTitle").innerHTML = "How did you rank in "+ genre+"?";
+	document.getElementById("lineChartTitle").innerHTML =
+		"How did you rank in "+ genre+"?";
 
 	// initializing data array all to 0's	
 	var dataArray = [];
@@ -77,8 +80,9 @@ function drawLineChart() {
 	// drawing the chart
 	var linectx = $("#lineChart").get(0).getContext("2d");
 	var lineData = {
-	    labels: ["Score: 0", "Score: 1", "Score: 2", "Score: 3", "Score: 4", "Score:  5",
-	    		 "Score: 6", "Score: 7", "Score: 8", "Score: 9", "Score: 10"],
+	    labels: ["Score: 0", "Score: 1", "Score: 2", "Score: 3", "Score: 4",
+	    		 "Score:  5", "Score: 6", "Score: 7", "Score: 8", "Score: 9",
+	    		 "Score: 10"],
 	    datasets: [
 	        {
 	            label: "Score Comparison",
@@ -128,5 +132,6 @@ function genreScores() {
 }
 
 function pickQuizRedirect() {
-	window.location = "http://tuftsdev.github.io/comp20-f2015-team12/pickquiz.html";
+	window.location =
+		"http://tuftsdev.github.io/comp20-f2015-team12/pickquiz.html";
 }
